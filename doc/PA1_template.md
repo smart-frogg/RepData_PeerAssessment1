@@ -87,9 +87,9 @@ abline(v=22,col="green", lwd = 3)
 
 ![plot of chunk unnamed-chunk-4](./PA1_template_files/figure-html/unnamed-chunk-4.png) 
 
-We are seeing a clear maximum at **8:35** five-minutes interval.
+We are seeing a clear maximum at **8:35** five-minutes interval. In peak we observe value **206.1698**. It is **41.234** steps in a minute.
 
-But what about anonymous person? Usually this person wakes up at 5:30 and go to bed in period between 19:30 and 22:00. These numbers are not calculated, I just added it to the plot (green lines). In peak we observe **`41.234`** steps in a minute. [Wiki](https://en.wikipedia.org/wiki/Running) told us that these is more than 100 the number of steps per minute when running and race walking. So, near 8:30 our person just goes to work.
+But what about anonymous person? Usually this person wakes up at 5:30 and go to bed in period between 19:30 and 22:00. These numbers are not calculated, I just added it to the plot (green lines).  [Wiki](https://en.wikipedia.org/wiki/Running) told us that these is more than 100 the number of steps per minute when running and race walking. So, near 8:30 our person just goes to work.
 
 ## Imputing missing values
 
