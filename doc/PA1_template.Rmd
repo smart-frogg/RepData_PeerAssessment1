@@ -194,7 +194,7 @@ library(grid)
 source("../scripts/multiplot.R")
 
 p1 <- qplot(
-   weekendStepByIntervals$dayMinutes, 
+   weekendStepByIntervals$dayMinutes/60, 
    weekendStepByIntervals$avg,
    geom = "line",
    main = "Average daily activity pattern for weekends",
@@ -203,7 +203,7 @@ p1 <- qplot(
    ylim = c(0,300))
 
 p2 <- qplot(
-   weekdayStepByIntervals$dayMinutes, 
+   weekdayStepByIntervals$dayMinutes/60, 
    weekdayStepByIntervals$avg,
    geom = "line",
    main = "Average daily activity pattern for weekdays",

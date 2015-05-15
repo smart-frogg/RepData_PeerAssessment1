@@ -41,7 +41,7 @@ meanPerDays <- mean(stepByDays)
 medianPerDays <- median(stepByDays)
 ```
 
-So, the mean of the total number of steps per day is **9354.2295**, and the median of this parameter is  **10395**.
+So, the mean of the total number of steps per day is **9354.2295082**, and the median of this parameter is  **10395**.
 
 Let's plot а histogram to show the parameter in the dynamics:
 
@@ -56,7 +56,7 @@ legend ("topleft",
 		lwd = c(3,3),bty="n")
 ```
 
-![plot of chunk unnamed-chunk-3](./PA1_template_files/figure-html/unnamed-chunk-3.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
 
 ## What is the average daily activity pattern?
 
@@ -85,9 +85,9 @@ abline(v=19.5,col="green", lwd = 3)
 abline(v=22,col="green", lwd = 3)
 ```
 
-![plot of chunk unnamed-chunk-4](./PA1_template_files/figure-html/unnamed-chunk-4.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
 
-We are seeing a clear maximum at **8:35** five-minutes interval. In peak we observe value **206.1698**. It is **41.234** steps in a minute.
+We are seeing a clear maximum at **8:35** five-minutes interval. In peak we observe value **206.1698113**. It is **41.2339623** steps in a minute.
 
 But what about anonymous person? Usually this person wakes up at 5:30 and go to bed in period between 19:30 and 22:00. These numbers are not calculated, I just added it to the plot (green lines).  [Wiki](https://en.wikipedia.org/wiki/Running) told us that these is more than 100 the number of steps per minute when running and race walking. So, near 8:30 our person just goes to work.
 
@@ -137,7 +137,7 @@ medianPerDaysWithoutNA <- as.character(median(stepByDaysWithoutNA))
         <th>Initial data set</th><th>After NAs replacement</tr>
     </tr>
     <tr>
-        <td>9354.2295</td><td>10766.1886792453</td>
+        <td>9354.2295082</td><td>10766.1886792453</td>
     <tr>
     </tr>
         <td>10395</td><td>10766.1886792453</td>
@@ -157,7 +157,7 @@ legend ("topleft",
 		lwd = c(3,3),bty="n")
 ```
 
-![plot of chunk unnamed-chunk-8](./PA1_template_files/figure-html/unnamed-chunk-8.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-8-1.png) 
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -203,7 +203,7 @@ library(grid)
 source("../scripts/multiplot.R")
 
 p1 <- qplot(
-   weekendStepByIntervals$dayMinutes, 
+   weekendStepByIntervals$dayMinutes/60, 
    weekendStepByIntervals$avg,
    geom = "line",
    main = "Average daily activity pattern for weekends",
@@ -212,7 +212,7 @@ p1 <- qplot(
    ylim = c(0,300))
 
 p2 <- qplot(
-   weekdayStepByIntervals$dayMinutes, 
+   weekdayStepByIntervals$dayMinutes/60, 
    weekdayStepByIntervals$avg,
    geom = "line",
    main = "Average daily activity pattern for weekdays",
@@ -223,6 +223,6 @@ p2 <- qplot(
 multiplot(p1, p2, cols=1)
 ```
 
-![plot of chunk unnamed-chunk-11](./PA1_template_files/figure-html/unnamed-chunk-11.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
 
 We can see, that wake up time is much more variable for weekends. All weekend day passes more actively and ends much later than weekday.
